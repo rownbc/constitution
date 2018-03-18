@@ -1,6 +1,8 @@
 [submodule "script"]
 	path = script
 	url = https://github.com/rownbc/constitution-scripts.git
+	update = rebase
 	branch = master
+	fetchRecurseSubmodules = true
 	ignore = all
 	shallow = true
