@@ -5,4 +5,4 @@
 	branch = master
 	fetchRecurseSubmodules = true
 	ignore = all
-	shallow = true
+	#shallow = true
