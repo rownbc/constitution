@@ -9,10 +9,9 @@ branches:
   - master
 git:
   submodules: true
-  depth: false
+  #depth: false
 
 before_install:
-  - git submodule update --remote
   #- docker pull rownbc/constitution-scripts
   - docker build -t pandoc script/pandoc
   #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
