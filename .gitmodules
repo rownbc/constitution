@@ -3,3 +3,7 @@
 	url = https://github.com/rownbc/constitution-scripts.git
 	ignore = all
 	shallow = true
+[submodule "script"]
+	path = script
+	url = https://github.com/rownbc/constitution-scripts.git
+	branch = master
