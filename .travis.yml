@@ -17,7 +17,7 @@ before_install:
   #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
 script:
   - mkdir out
-  - docker run -v `pwd`:/data pandoc -f markdown --template=pandoc.tex metadata.yaml document.md -o out/document.pdf
+  - docker run -v `pwd`:/data pandoc -f markdown --template=script/default.latex metadata.yaml document.md -o out/document.pdf
 
 deploy:
   provider: releases
