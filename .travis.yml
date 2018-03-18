@@ -6,6 +6,7 @@ env:
 branches:
   only:
   - test
+  - master
 git:
   submodules: true
   depth: false
