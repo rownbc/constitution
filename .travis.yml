@@ -13,7 +13,8 @@ git:
 before_install:
   - git submodule update --remote
   #- docker pull rownbc/constitution-scripts
-  - docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
+  - docker build -t pandoc script/pandoc
+  #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
 script:
   - mkdir out
   - docker run -v `pwd`:/data pandoc -f markdown --template=pandoc.tex metadata.yaml document.md -o out/document.pdf
