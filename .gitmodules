@@ -1,3 +1,5 @@
 [submodule "constitution-scripts"]
-	path = script
-	url = https://github.com/rownbc/constitution-scripts
+	path = constitution-scripts
+	url = https://github.com/rownbc/constitution-scripts.git
+	ignore = all
+	shallow = true
