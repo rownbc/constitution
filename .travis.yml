@@ -3,17 +3,22 @@ services:
   - docker
 
 env:
-
+branches:
+  only:
+  - test
 git:
-  submodules: false
+  submodules: true
+  depth: false
 
 before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
-  - docker pull rownbc/doc-template
+  #- docker pull rownbc/constitution-scripts
+  - docker build -t pandoc script/pandoc
 script:
   - mkdir out
-  - docker run -v `pwd`:/data rownbc/doc-template -f markdown --template=pandoc.tex metadata.yaml document.md -o out/document.pdf
+  - docker run -v `pwd`:/data pandoc -f markdown --template=pandoc.tex metadata.yaml document.md -o out/document.pdf
+
 deploy:
   provider: releases
   api_key:
