@@ -1,9 +1,6 @@
-[submodule "constitution-scripts"]
-	path = constitution-scripts
-	url = https://github.com/rownbc/constitution-scripts.git
-	ignore = all
-	shallow = true
 [submodule "script"]
 	path = script
 	url = https://github.com/rownbc/constitution-scripts.git
 	branch = master
+	ignore = all
+	shallow = true
