@@ -1,0 +1,29 @@
+#[submodule "example"]
+#	path = example
+#	url = https://github.com/<project>/example.git
+
+	# [checkout|rebase|merge|<custom command>|none]
+	#update = rebase
+
+	# [master|<*>]
+	#branch = master
+
+	# [true|false]
+	#fetchRecurseSubmodules = true
+
+	# [all|dirty|untracked|none]
+	#ignore = dirty
+
+	# [true|false]
+	#shallow = true
+
+
+
+[submodule "script"]
+	path = script
+	url = https://github.com/rownbc/constitution-scripts.git
+	update = rebase
+	branch = master
+	fetchRecurseSubmodules = true
+	ignore = dirty
+	shallow = true

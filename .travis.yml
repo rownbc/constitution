@@ -1,0 +1,30 @@
+sudo: required
+services: [docker]
+env:
+branches:
+  only:
+  - test
+  - master
+git:
+  submodules: true
+  #depth: false
+
+before_install:
+  #- docker pull rownbc/constitution-scripts
+  - git submodule update --remote --init
+  - docker build -t pandoc script/pandoc
+  #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
+script:
+  - mkdir out
+  - docker run -v `pwd`:/data pandoc -f markdown --template=script/default.latex metadata.yaml document.md -o out/document.pdf
+
+deploy:
+  provider: releases
+  api_key:
+    secure: hGuRzoq8d65PopJ+kxUh1B04Kj76ItodU97iDMtSKokA94Ib7IULlHURJ/bI6aCRD5TGOJoSNG1PYIOgQgIJgU7jy7Eki8fyio1Is+ARDvudqEjt/wftxQLw1ELYFgFtjHwm3IkXqgZf2z84r8L8FfzmKEWXruKWc2apEa/DCDfqbTgVYQiGv15Vx4H2vh1XMpny6LcZZcUY0CARf5nWnl8j8gsNuEgofTvjKUXLdAjL7UAjtSoYSt1llSBS8Z/xeoQoIkCl6ZylaNWte+yRpM8GIwpEeQ6po3BUyXXlRhFB82fo9Z0b6elEpLOJL8wKB3Ln274klAX9YVgrhdXZS0FEMPm+39pS3qnM8nbwETxpL8w5H7yePYRvXAhjxoQZ3czLvCMD8ofWHm/PQiK/mYWd36s+d6Ly/eNFllOtZnn1ZPdSVufT332fArHo/BaN+9JL+w/EXtNpZmglRpthfli/x7WDxdv2x0d6Fu/ct1oC1mtpJgNwh592dGeKWk5ByIk2rykttCNtT9LIMc7Qv8uIp9fzHuzpzq+SZ5GGJEVv8qJviAfSiHCi/8kpL24QFJRzAhKN1DriG+DDLC/BObkBS+UeTBMSLGLS60x8MoNB+aNxUlsDJIP1l7AvYITHoTNGuH47LlPOEhDpPSnvlH+yqbrKphpy8k4O5fA8JN4=
+  file_glob: true
+  file: out/*
+  skip_cleanup: true
+  on:
+    repo: rownbc/constitution
+    tags: true
