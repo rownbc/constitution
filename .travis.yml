@@ -1,7 +1,5 @@
 sudo: required
-services:
-  - docker
-
+services: [docker]
 env:
 branches:
   only:
@@ -13,6 +11,7 @@ git:
 
 before_install:
   #- docker pull rownbc/constitution-scripts
+  - git submodule update --remote --init
   - docker build -t pandoc script/pandoc
   #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
 script:
