@@ -1,5 +1,5 @@
-<div style="text-align:center">![](https://github.com/rownbc.png?size=128)</div>
-# Narragansett Boat Club Constitution and Bylaws
+
+# ![](https://github.com/rownbc.png?size=40)    Narragansett Boat Club Constitution and Bylaws
 > Adopted on March 6<sup>th</sup>, 1838 by George C. Nightingale, William A. Greene, Rufus Waterman, Henry Lippitt, Sullivan Dorr, Jr., William C. Allen, and Charles Arnold.
 
 [![Build Status][travis-image]][travis-url]
