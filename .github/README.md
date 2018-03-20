@@ -39,7 +39,8 @@ vagrant up
 
 #### Option 3: Manually
 ```bash
-
+mkdir build
+pandoc -f markdown --template=script/default.latex document.md -o build/constitution.pdf
 ```
 
 <!-- Markdown link & img dfn's -->
