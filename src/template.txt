@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+$if(titleblock)$
+$titleblock$
+
+$endif$
+$for(header-includes)$
+$header-includes$
+
+$endfor$
+$for(include-before)$
+$include-before$
+
+$endfor$
+$if(toc)$
+$table-of-contents$
+
+$endif$
+$body$
+$for(include-after)$
+
+$include-after$
+$endfor$
+
+
+Network Working Group                                         S. Bradner
+Request for Comments: 2026                            Harvard University
+BCP: 9                                                      October 1996
+Obsoletes: 1602
+Category: Best Current Practice
+
+
+RFC 2026               Internet Standards Process           October 1996

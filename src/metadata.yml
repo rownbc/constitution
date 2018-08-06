@@ -1,0 +1,55 @@
+---
+title: |
+  NARRAGANSETT BOAT CLUB CONSTITUTION  
+  AND BYLAWS
+thanks: "Adopted March 6, 1838"
+subtitle: "Adopted March 6, 1838"
+date: "Last Revised June 11, 2014"
+lang: en-US
+standalone: true
+papersize: letter
+pagestyle: headings
+subparagraph: false
+toc: true
+toc-depth: 2
+secnumdepth: 3
+fontsize: 11pt
+documentclass: constitution
+topleveldivision: section
+geometry: margin=0.75in
+fontenc: T1
+numbersections: true
+include-before: 
+- |
+  '```{=latex}
+  \begin{frammpar}
+  ```'
+include-after: '`\end{frammpar}`{=latex}'
+#- \renewcommand{\thesection}{ARTICLE \Roman{section}}
+#- \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+#- | 
+#  ```{=latex}
+#  \providecommand{
+#    \subtitle}[1]{\usepackage{titling}\posttitle{\par\large#1\end{center}}
+#  }
+#  ```
+
+#- |
+#  ```{=latex}
+#  \usepackage[explicit]{titlesec}
+#  ```
+#- |
+#  ```{=latex}
+#  % format section use uppercase roman numerals
+#  \titleformat{\section}[block]
+#  {\filcenter\bf}{ARTICLE {\Roman{section}}}{1em}{\MakeUppercase}
+#  ```
+#- |
+#  ```{=latex}
+#  % format subsection use arabic numerals breadcrumb style
+#  \titleformat{\subsection}[runin]
+#  {}{\arabic{section}.\arabic{subsection}}{1em}{}
+#  ```
+
+
+---

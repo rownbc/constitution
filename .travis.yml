@@ -10,13 +10,20 @@ git:
   #depth: false
 
 before_install:
-  #- docker pull rownbc/constitution-scripts
+  - docker pull rownbc/constitution-scripts
   - git submodule update --remote --init
-  - docker build -t pandoc script/pandoc
+  #- docker build -t pandoc script/pandoc
   #- docker build --cache-from rownbc/constitution-scripts:latest -t pandoc script/pandoc
 script:
   - mkdir out
-  - docker run -v `pwd`:/data pandoc -f markdown --template=script/default.latex metadata.yaml document.md -o out/document.pdf
+  - docker run -v `pwd`:/source jagregory/pandoc \
+    --template=script/default.latex
+    --latex-engine=xelatex
+    --from=markdown \
+    --to=pdf
+    --output=out/document.pdf
+    metadata.yaml document.md
+
 
 deploy:
   provider: releases
